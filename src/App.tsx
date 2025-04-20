@@ -10,27 +10,30 @@ import AdminPage from './pages/AdminPage';
 import { CartProvider } from './contexts/CartContext';
 import { MenuProvider } from './contexts/MenuContext';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 const App: React.FC = () => {
   return (
     <LanguageProvider>
-      <MenuProvider>
-        <CartProvider>
-          <div className="min-h-screen flex flex-col bg-restaurant">
-            <Header />
-            <main className="flex-grow container mx-auto px-4 py-8">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/menu" element={<MenuPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/admin" element={<AdminPage />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </CartProvider>
-      </MenuProvider>
+      <AuthProvider>
+        <MenuProvider>
+          <CartProvider>
+            <div className="min-h-screen flex flex-col bg-restaurant">
+              <Header />
+              <main className="flex-grow container mx-auto px-4 py-8">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/menu" element={<MenuPage />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/checkout" element={<CheckoutPage />} />
+                  <Route path="/admin" element={<AdminPage />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </MenuProvider>
+      </AuthProvider>
     </LanguageProvider>
   );
 };

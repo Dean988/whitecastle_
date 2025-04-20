@@ -82,6 +82,20 @@ export const translations = {
     cancelEdit: 'Annulla Modifica',
     currentItems: 'Prodotti Attuali',
     noItemsAdded: 'Nessun prodotto è stato ancora aggiunto.',
+    
+    // Login Page
+    loginTitle: 'Accesso Amministratore',
+    loginUsername: 'Nome Utente',
+    loginPassword: 'Password',
+    loginSubmit: 'Accedi',
+    loginProcessing: 'Accesso in corso...',
+    loginError: 'Si è verificato un errore durante l\'accesso. Riprova.',
+    loginInvalidCredentials: 'Credenziali non valide. Riprova.',
+    loginRequiredFields: 'Inserisci nome utente e password.',
+    loginAdminOnly: 'Questa area è riservata agli amministratori del ristorante.',
+    logout: 'Disconnetti',
+    adminArea: 'Area Amministrazione',
+    adminWelcome: 'Benvenuto nell\'area amministrazione',
 
     // Footer
     address: 'Indirizzo',
@@ -101,7 +115,7 @@ export const translations = {
     home: 'Home',
     menu: 'Menu',
     cart: 'Cart',
-    admin: 'Admin',
+    admin: 'Administration',
     fineDining: 'Fine dining experience',
 
     // Home Page
@@ -177,6 +191,20 @@ export const translations = {
     cancelEdit: 'Cancel Edit',
     currentItems: 'Current Menu Items',
     noItemsAdded: 'No menu items have been added yet.',
+    
+    // Login Page
+    loginTitle: 'Administrator Login',
+    loginUsername: 'Username',
+    loginPassword: 'Password',
+    loginSubmit: 'Sign In',
+    loginProcessing: 'Signing in...',
+    loginError: 'An error occurred during login. Please try again.',
+    loginInvalidCredentials: 'Invalid credentials. Please try again.',
+    loginRequiredFields: 'Please enter both username and password.',
+    loginAdminOnly: 'This area is restricted to restaurant administrators only.',
+    logout: 'Logout',
+    adminArea: 'Administration Area',
+    adminWelcome: 'Welcome to the administration area',
 
     // Footer
     address: 'Address',

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useAuth } from '../contexts/AuthContext';
 import logo from '../assets/logo.jpeg';
 import LanguageSelector from './LanguageSelector';
 
 const Header: React.FC = () => {
   const { totalItems } = useCart();
   const { t } = useLanguage();
+  const { isAuthenticated } = useAuth();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
@@ -56,12 +58,15 @@ const Header: React.FC = () => {
                   </span>
                 )}
               </Link>
-              <Link 
-                to="/admin" 
-                className={`font-medium hover:text-accent transition-colors ${isActive('/admin') ? 'text-accent border-b-2 border-accent' : 'text-secondary'}`}
-              >
-                {t('admin')}
-              </Link>
+              {/* Mostra il link Admin solo se l'utente è autenticato */}
+              {isAuthenticated && (
+                <Link 
+                  to="/admin" 
+                  className={`font-medium hover:text-accent transition-colors ${isActive('/admin') ? 'text-accent border-b-2 border-accent' : 'text-secondary'}`}
+                >
+                  {t('admin')}
+                </Link>
+              )}
             </nav>
           </div>
           
@@ -112,13 +117,16 @@ const Header: React.FC = () => {
               >
                 {t('menu')}
               </Link>
-              <Link 
-                to="/admin" 
-                className={`font-medium hover:text-accent transition-colors ${isActive('/admin') ? 'text-accent' : 'text-secondary'}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('admin')}
-              </Link>
+              {/* Mostra il link Admin solo se l'utente è autenticato */}
+              {isAuthenticated && (
+                <Link 
+                  to="/admin" 
+                  className={`font-medium hover:text-accent transition-colors ${isActive('/admin') ? 'text-accent' : 'text-secondary'}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t('admin')}
+                </Link>
+              )}
               <div className="pt-2">
                 <LanguageSelector />
               </div>

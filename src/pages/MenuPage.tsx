@@ -30,12 +30,12 @@ const MenuPage: React.FC = () => {
       
       {/* Category Tabs */}
       <div className="flex justify-center mb-8 overflow-x-auto">
-        <div className="flex p-1 bg-white bg-opacity-80 rounded-lg shadow">
+        <div className="flex flex-wrap p-1 bg-white bg-opacity-80 rounded-lg shadow">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2 rounded-md text-lg font-medium transition-colors ${
+              className={`px-4 py-2 m-1 rounded-md text-lg font-medium transition-colors ${
                 activeCategory === category.id
                   ? 'bg-accent text-white'
                   : 'text-secondary hover:bg-gray-100'
