@@ -127,9 +127,6 @@ const Header: React.FC = () => {
                   {t('admin')}
                 </Link>
               )}
-              <div className="pt-2">
-                <LanguageSelector />
-              </div>
             </nav>
           </div>
         )}
